@@ -1,0 +1,16 @@
+#nome,ativo,num_albuns,num_albuns_vendidos,num_integrantes,genero
+Metallica,TRUE,11,125,4,heavy-metal
+The Beatles,FALSE,13,236,4,rock
+Led Zeppelin,FALSE,9,300,4,heavy-metal
+Queen,TRUE,15,300,3,rock
+AC/DC,TRUE,15,123,3,hard-rock
+Pink Floyd,FALSE,15,250,4,progressive-rock
+Nirvana,FALSE,3,75,3,grunge
+Guns N' Roses,TRUE,6,100,5,hard-rock
+Iron Maiden,TRUE,17,200,6,heavy-metal
+The Rolling Stones,TRUE,30,240,4,rock
+U2,TRUE,14,175,4,rock
+Deep Purple,TRUE,22,100,5,hard-rock
+Black Sabbath,FALSE,19,150,4,heavy-metal
+Aerosmith,TRUE,15,150,5,hard-rock
+Red Hot Chili Peppers,TRUE,13,120,4,alternative-rock 

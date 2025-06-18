@@ -63,3 +63,58 @@
 2025-06-18 15:07:52.300 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
 2025-06-18 15:07:52.326 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
 2025-06-18 15:07:52.414 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-18 16:33:58.406 [error] Error: Illegal argument
+    at Vn (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:7:1206)
+    at HNt (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:412:125718)
+    at vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:422:17074
+    at a0t.invokeFunction (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1905:674)
+    at WKe.n (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1845:1433)
+    at WKe.executeCommand (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1845:1039)
+    at Wqt.$executeCommand (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1268:529)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220) vscode.executeDocumentColorProvider undefined
+2025-06-18 16:33:58.407 [error] Error: Illegal argument
+    at Vn (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:7:1206)
+    at vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:412:80767
+    at a0t.invokeFunction (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1905:674)
+    at WKe.n (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1845:1433)
+    at WKe.executeCommand (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1845:1039)
+    at Wqt.$executeCommand (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1268:529)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220)
+    at V0t.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:38324) vscode.executeCodeActionProvider undefined
+2025-06-18 16:33:58.669 [error] Error: Illegal argument
+    at Vn (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:7:1206)
+    at vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:412:80767
+    at a0t.invokeFunction (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1905:674)
+    at WKe.n (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1845:1433)
+    at WKe.executeCommand (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1845:1039)
+    at Wqt.$executeCommand (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1268:529)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220)
+    at V0t.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:38324) vscode.executeCodeActionProvider undefined
+2025-06-18 16:33:58.703 [error] Error: Unable to read file '/home/gabriel.carvalho19/Downloads/westview.csv' (Error: Unable to resolve nonexistent file '/home/gabriel.carvalho19/Downloads/westview.csv')
+    at Apt.G (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3235:65455)
+    at Apt.F (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3235:65280)
+    at async Kpt.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3236:9345)
+    at async Kpt.readStream (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3236:9120)
+    at async Lwe.Eb (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1825:12310)
+    at async Lwe.resolve (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1825:10785)
+    at async zpt.W (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3236:5991)
+    at async EKe.r (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1825:21263)
+    at async xCt.acquire (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:27:3125)
+    at async IKe.createModelReference (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1825:22819) vscode.executeDocumentSymbolProvider undefined
+2025-06-18 16:33:58.706 [error] Error: Illegal argument
+    at Vn (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:7:1206)
+    at vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:412:109853
+    at a0t.invokeFunction (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1905:674)
+    at WKe.n (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1845:1433)
+    at WKe.executeCommand (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1845:1039)
+    at Wqt.$executeCommand (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1268:529)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220)
+    at V0t.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:38324) vscode.executeCodeLensProvider undefined
