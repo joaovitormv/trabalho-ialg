@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/etc/skel/.config/autostart/dconf-favorite-apps.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Set Favorite Apps
+Name=Set Favorite Apps
+Comment=This script sets Firefox and Terminal as favorite apps in the dock

@@ -1,0 +1,65 @@
+2025-06-18 13:33:47.393 [info] Extension host with pid 5075 started
+2025-06-18 13:33:47.542 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-18 13:33:47.759 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-18 13:33:47.780 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-18 13:33:47.855 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-18 13:33:48.003 [info] Eager extensions activated
+2025-06-18 13:33:48.024 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-18 13:33:48.028 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-18 13:35:26.712 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-18 13:36:04.732 [info] ExtensionService#_doActivateExtension ms-vsliveshare.vsliveshare, startup: false, activationEvent: 'onView:liveshare.session'
+2025-06-18 13:36:17.281 [error] Error: Sign in cancelled
+	at GitHubAuthTokenProvider.cancelSignIn (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:245175)
+	at GitHubAuthTokenProvider.<anonymous> (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:243307)
+	at Generator.throw (<anonymous>)
+	at rejected (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:241152)
+2025-06-18 13:36:30.037 [info] Extension host terminating: renderer closed the MessagePort
+2025-06-18 13:36:30.087 [info] Extension host with pid 5075 exiting with code 0
+2025-06-18 13:36:31.585 [info] Extension host with pid 5533 started
+2025-06-18 13:36:31.622 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-18 13:36:31.756 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-18 13:36:31.786 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-18 13:36:31.840 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-18 13:36:31.977 [info] Eager extensions activated
+2025-06-18 13:36:32.018 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-18 13:36:32.022 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-18 13:36:43.638 [info] ExtensionService#_doActivateExtension ms-vsliveshare.vsliveshare, startup: false, activationEvent: 'onView:liveshare.session'
+2025-06-18 13:40:12.108 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-18 14:05:48.394 [error] TypeError: Cannot read properties of null (reading 'indexOf')
+	at PathUtil.getMonikerFromRelativePath (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:677200)
+	at PathUtil.getRelativePathFromPrefixedPath (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:677435)
+	at TrackDebugManager.<anonymous> (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:814851)
+	at Generator.next (<anonymous>)
+	at /home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:810268
+	at new Promise (<anonymous>)
+	at r (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:809954)
+	at TrackDebugManager.onFilesChanged (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:814803)
+	at CallbackList.invoke (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:110:178571)
+	at Emitter.fire (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:110:179324)
+	at /home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/extension.js:1:1149033
+	at handleNotification (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:110:189289)
+	at processMessageQueue (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:110:189544)
+	at Immediate.<anonymous> (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:110:191192)
+	at process.processImmediate (node:internal/timers:483:21)
+2025-06-18 14:19:42.500 [error] Error: write EPIPE
+	at afterWriteDispatched (node:internal/stream_base_commons:161:15)
+	at writeGeneric (node:internal/stream_base_commons:152:3)
+	at Socket._writeGeneric (node:net:958:11)
+	at Socket._write (node:net:970:8)
+	at writeOrBuffer (node:internal/streams/writable:572:12)
+	at _write (node:internal/streams/writable:501:10)
+	at Writable.write (node:internal/streams/writable:510:10)
+	at /home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:1:703723
+	at new Promise (<anonymous>)
+	at NodeStream.write (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:1:703661)
+	at SshProtocol.write (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:1:560304)
+	at SshProtocol.sendMessage (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:1:563574)
+	at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+	at async SshProtocol.considerReExchange (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:1:560850)
+	at async SshServerSession.encrypt (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:1:679730)
+	at async SshServerSession.doConnect (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:1:678522)
+	at async SshServerSession.connect (/home/gabriel.carvalho19/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.5948/vendor.js:1:678063)
+2025-06-18 14:20:03.631 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onTerminalQuickFixRequest:ms-vscode.npm-command'
+2025-06-18 15:07:52.300 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-18 15:07:52.326 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-18 15:07:52.414 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'

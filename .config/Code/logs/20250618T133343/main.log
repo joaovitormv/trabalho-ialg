@@ -1,0 +1,13 @@
+2025-06-18 13:33:43.745 [info] update#setState idle
+2025-06-18 13:34:13.749 [info] update#setState checking for updates
+2025-06-18 13:34:13.752 [info] update#setState idle
+2025-06-18 13:36:30.087 [info] Extension host with pid 5075 exited with code: 0, signal: unknown.
+2025-06-18 13:36:30.117 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 5056]: crashed with code 15 and reason 'killed'
+2025-06-18 13:40:14.401 [warning] [perf] profiling STARTED 7526a609-a013-4759-8c57-d69f29755066
+2025-06-18 13:40:19.454 [warning] [perf] profiling DONE 7526a609-a013-4759-8c57-d69f29755066
+2025-06-18 13:40:19.732 [warning] [perf] profiling STARTED 7526a609-a013-4759-8c57-d69f29755066
+2025-06-18 13:40:24.791 [warning] [perf] profiling DONE 7526a609-a013-4759-8c57-d69f29755066
+2025-06-18 13:40:25.073 [warning] [perf] profiling STARTED 7526a609-a013-4759-8c57-d69f29755066
+2025-06-18 13:40:30.120 [warning] [perf] profiling DONE 7526a609-a013-4759-8c57-d69f29755066
+2025-06-18 14:34:13.752 [info] update#setState checking for updates
+2025-06-18 14:34:13.755 [info] update#setState idle

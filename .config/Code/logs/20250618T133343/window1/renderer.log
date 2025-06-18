@@ -1,0 +1,84 @@
+2025-06-18 13:33:46.161 [info] Started local extension host with pid 5075.
+2025-06-18 13:33:46.222 [info] Started initializing default profile extensions in extensions installation folder. file:///home/gabriel.carvalho19/.vscode/extensions
+2025-06-18 13:33:46.233 [info] ChatSessionStore: Migrating 0 chat sessions from storage service to file system
+2025-06-18 13:33:46.499 [info] ComputeTargetPlatform: linux-x64
+2025-06-18 13:33:46.663 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/gabriel.carvalho19/.vscode/extensions
+2025-06-18 13:33:47.439 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2025-06-18 13:33:55.909 [info] [perf] Render performance baseline is 32ms
+2025-06-18 13:36:05.162 [error] [Extension Host] (node:5075) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2025-06-18 13:36:17.284 [error] An unknown error occurred. Please consult the log for more details.
+2025-06-18 13:36:30.817 [info] Started local extension host with pid 5533.
+2025-06-18 13:36:31.259 [info] ComputeTargetPlatform: linux-x64
+2025-06-18 13:36:31.637 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2025-06-18 13:36:33.364 [warning] Creation of workbench contribution 'workbench.contrib.configurationMigration' took 102ms.
+2025-06-18 13:36:33.647 [info] [perf] Render performance baseline is 32ms
+2025-06-18 13:36:44.094 [error] [Extension Host] (node:5533) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2025-06-18 13:40:13.474 [warning] [perf] Renderer reported VERY LONG TASK (652ms), starting profiling session '7526a609-a013-4759-8c57-d69f29755066'
+2025-06-18 14:05:48.396 [error] An unknown error occurred. Please consult the log for more details.
+2025-06-18 14:12:50.226 [error] Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+    at qnt.q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15089)
+    at qnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15949)
+    at Jnt.o (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:19057)
+    at Jnt.perform (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:18493)
+    at Xnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:20369)
+    at Lqt.$tryApplyWorkspaceEdit (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1257:4135)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220)
+    at V0t.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:38457)
+2025-06-18 14:12:50.227 [warning] IGNORING workspace edit: Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+2025-06-18 14:16:48.989 [error] Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+    at qnt.q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15089)
+    at qnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15949)
+    at Jnt.o (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:19057)
+    at Jnt.perform (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:18493)
+    at Xnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:20369)
+    at Lqt.$tryApplyWorkspaceEdit (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1257:4135)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220)
+    at V0t.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:38457)
+2025-06-18 14:16:48.990 [warning] IGNORING workspace edit: Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+2025-06-18 14:16:52.356 [error] Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+    at qnt.q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15089)
+    at qnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15949)
+    at Jnt.o (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:19057)
+    at Jnt.perform (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:18493)
+    at Xnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:20369)
+    at Lqt.$tryApplyWorkspaceEdit (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1257:4135)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220)
+    at V0t.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:38457)
+2025-06-18 14:16:52.356 [warning] IGNORING workspace edit: Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+2025-06-18 14:19:41.505 [error] [Extension Host] Error: Unexpected SIGPIPE
+	at process.<anonymous> (file:///snap/code/195/usr/share/code/resources/app/out/bootstrap-fork.js:3:11860)
+	at process.emit (node:events:524:28)
+2025-06-18 14:19:42.523 [error] An unknown error occurred. Please consult the log for more details.
+2025-06-18 14:46:46.116 [error] Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+    at qnt.q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15089)
+    at qnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15949)
+    at Jnt.o (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:19057)
+    at Jnt.perform (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:18493)
+    at Xnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:20369)
+    at Lqt.$tryApplyWorkspaceEdit (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1257:4135)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220)
+    at V0t.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:38457)
+2025-06-18 14:46:46.116 [warning] IGNORING workspace edit: Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+2025-06-18 15:12:54.223 [error] Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+    at qnt.q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15089)
+    at qnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:15949)
+    at Jnt.o (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:19057)
+    at Jnt.perform (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:18493)
+    at Xnt.apply (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2165:20369)
+    at Lqt.$tryApplyWorkspaceEdit (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1257:4135)
+    at V0t.S (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40354)
+    at V0t.Q (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:40132)
+    at V0t.M (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:39220)
+    at V0t.L (vscode-file://vscode-app/snap/code/195/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3272:38457)
+2025-06-18 15:12:54.224 [warning] IGNORING workspace edit: Error: file:///home/gabriel.carvalho19/trabalho.cpp has changed in the meantime
+2025-06-18 15:29:20.502 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted

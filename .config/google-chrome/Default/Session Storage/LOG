@@ -1,0 +1,11 @@
+2025/06/18-13:33:45.465 4 Creating DB /home/gabriel.carvalho19/.config/google-chrome/Default/Session Storage since it was missing.
+2025/06/18-13:33:45.518 4 Reusing MANIFEST /home/gabriel.carvalho19/.config/google-chrome/Default/Session Storage/MANIFEST-000001
+2025/06/18-13:44:42.886 5 Level-0 table #5: started
+2025/06/18-13:44:42.895 5 Level-0 table #5: 64341 bytes OK
+2025/06/18-13:44:42.904 5 Delete type=0 #3
+2025/06/18-13:53:54.632 4 Level-0 table #7: started
+2025/06/18-13:53:54.641 4 Level-0 table #7: 60173 bytes OK
+2025/06/18-13:53:54.648 4 Delete type=0 #4
+2025/06/18-14:30:07.933 5 Level-0 table #9: started
+2025/06/18-14:30:07.946 5 Level-0 table #9: 62149 bytes OK
+2025/06/18-14:30:07.958 5 Delete type=0 #6

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="libreoffice-calc.desktop" score="0" last-seen="1750271379"/>
+    <application id="org.gnome.Nautilus.desktop" score="5" last-seen="1750271390"/>
+    <application id="google-chrome.desktop" score="236" last-seen="1750271260"/>
+    <application id="code_code.desktop" score="618" last-seen="1750271394"/>
+    <application id="org.gnome.Terminal.desktop" score="5" last-seen="1750270864"/>
+    <application id="geany.desktop" score="24" last-seen="1750270872"/>
+  </context>
+</application-state>
