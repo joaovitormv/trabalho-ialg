@@ -6,13 +6,15 @@
 using namespace std;
 
 struct banda{
+    int id;
 	string nome;
 	int numAlbuns;
     bool ativa;
 	float numVendas;
 	int numMembrosFund;
 	string genero;
-	};
+    bool excluido;
+};
 
 
 
@@ -25,38 +27,57 @@ banda* aumentarVetor(banda vetor[], int &qtd){
 	};
 
 void main_menu(){
-    cout<<" 1 - Listar\n";
-    cout<<"2 - Redimensionar\n"; 
+    cout<<"\n1 - Listar\n";
+    cout<<"2 - Inserir\n"; 
+    cout<<"3 - Pesquisar\n"; 
+    cout<<"4 - Ordenar\n";
+    cout<<"5 - Excluir\n";
     cout<<"0 - Encerrar\n";
 };
 
-void menu_pesquisa(string &nome_escolhido, int &ID_escolhido){ // 
-    int op;
-    int ID_escolhido;
-    string nome_escolhido;
+string menu_pesquisa(int &op){ // 
+    string escolhido;
     do{
-        cout<<"Você deseja pesquisar uma banda por: \n"
+        cout<<"Você deseja pesquisar uma banda por: \n";
         cout<<"1 - Nome\n";
         cout<<"2 - ID\n";
-        cout<<"0 - Cancelar";
+        cout<<"0 - Cancelar\n";
         cin>>op;
 
         switch(op){
             case 0:
-                ID_escolhido = nome_escolhido = NULL;
+                return escolhido;
+                break;
             case 1:
-                cout<<"Informe o nome que deseja pesquisar: "
-                cin>> nome_escolhido;
-                return nome_escolhido;
+                cout<<"Informe o nome que deseja pesquisar: "<<endl;
+                cin >> escolhido;
+                return escolhido;
             break;
             case 2:
+                cout<<"Informe o ID que deseja pesquisar: "<<endl;
+                cin >> escolhido;
+                return escolhido;
             break;
             default:
-                cout<<"Opção inválida! >:(";
+                cout<<"Opção inválida! >:(\n";
         }
-    }
+    }while(op != 0);
+    return "Erro inesperado\n";
     
 } 
+
+int menu_ordena(){
+    int op;
+
+    cout<<"\nVocê deseja ordenar por: \n";
+    cout<<"1 - Álbuns\n";
+    cout<<"2 - ID\n";
+    cout<<"3 - Nome\n";
+    cout<<"0 - Cancelar\n";
+    cin>>op;
+
+    return op;
+}
 
 void inserir(banda vetor[], int &qtd) {
     string nome, genero;
@@ -103,14 +124,15 @@ void inserir(banda vetor[], int &qtd) {
     cout << "Qual o genero da banda? (Pode conter espaços)" << endl;
     cin.ignore(); // Ignora o \n deixado pelo cin anterior
     getline(cin, genero);
-
+    vetor[qtd].id = qtd;
     vetor[qtd].nome = nome;
     vetor[qtd].numAlbuns = albuns;
     vetor[qtd].ativa = (ativa == 1);
     vetor[qtd].numVendas = vendas;
     vetor[qtd].numMembrosFund = numMembrosFund;
     vetor[qtd].genero = genero;
-
+    vetor[qtd].excluido = false;
+    
     qtd++;
 };
 
@@ -144,7 +166,8 @@ int lerBandasDoCSV(const char* nomeArquivo, banda bandas[] ) {
         getline(ss, campo, ',');
         bandas[i].numMembrosFund = stoi(campo);
         getline(ss, bandas[i].genero); // Último campo pega até o fim da linha
-        
+        bandas[i].excluido = false;
+        bandas[i].id = i;
         i++;
     }
 
@@ -155,9 +178,11 @@ int lerBandasDoCSV(const char* nomeArquivo, banda bandas[] ) {
 void listar(banda vetor[], int qtd_bandas){
 	int tam = qtd_bandas;
 	for(int i =0; i<tam; i++){
-		cout<<vetor[i].nome<<" "<<vetor[i].numAlbuns<<" "<<vetor[i].numVendas<<" milhoes "<<vetor[i].numMembrosFund<<" "<<vetor[i].genero<<endl;
+        if(vetor[i].excluido== false){
+		    cout<<vetor[i].id<<" "<<vetor[i].nome<<" "<<vetor[i].numAlbuns<<" "<<vetor[i].numVendas<<" milhoes "<<vetor[i].numMembrosFund<<" "<<vetor[i].genero<<endl;
 		}
-	};
+    }
+};
 
 
 void ordenarPorAlbuns(banda vet[], int qtd){
@@ -165,7 +190,22 @@ void ordenarPorAlbuns(banda vet[], int qtd){
      for(int i = 0; i<qtd; i++){
          index = vet[i];
          int j = i -1;
-         while(j>=0 and vet[j].numAlbuns>index.numAlbuns){
+         while(j>=0 and vet[j].numVendas>index.numVendas){
+            vet[j+1] = vet[j];
+            j--;
+        
+         }
+        vet[j+1] = index;
+     }
+    
+};
+
+void ordenarPorId(banda vet[], int qtd){
+     banda index; 
+     for(int i = 0; i<qtd; i++){
+         index = vet[i];
+         int j = i -1;
+         while(j>=0 and vet[j].id>index.id){
             vet[j+1] = vet[j];
             j--;
         
@@ -214,16 +254,61 @@ void buscarPorNome(banda vet[], string pesquisa, int qtd_bandas){
             pos_final = meio - 1;
            }
   	    }
-    if(posicao != -1){
+   }
+   if(posicao != -1){
         cout<<"A banda foi encontrada!!"<<endl;
         cout<<"Nome: "<<vet[posicao].nome<<" Numero de Albuns: "<<vet[posicao].numAlbuns<< "Numero de vendas: "<<vet[posicao].numVendas<<endl;
     }else{
-        cout<<"Não existe banda como esse nome aqui :("
+        cout<<"Não existe banda como esse nome aqui :(";
     }
-   }
-   
 }
-   
+
+void buscarPorID(banda vet[], int pesquisa, int qtd_bandas){
+    ordenarPorId(vet, qtd_bandas);
+    int i, posicao = -1;
+    int pos_inicial = 0;
+    int pos_final = qtd_bandas - 1;
+    int meio;
+    while (pos_inicial <= pos_final) {
+  	    meio = (pos_inicial + pos_final)/2;
+  	    if (pesquisa == vet[meio].id){
+     	   posicao = meio;
+     	   pos_inicial = pos_final + 1;
+  	    } else { 
+     	   if (pesquisa > vet[meio].id) {
+            pos_inicial = meio + 1;
+           }
+     	   else {
+            pos_final = meio - 1;
+           }
+  	    }
+   }
+   if(posicao != -1){
+        cout<<"A banda foi encontrada!!"<<endl;
+        cout<<"Nome: "<<vet[posicao].nome<<" Numero de Albuns: "<<vet[posicao].numAlbuns<< "Numero de vendas: "<<vet[posicao].numVendas<<endl;
+    }else{
+        cout<<"Não existe banda com esse ID aqui :(";
+    }
+}
+
+void excluir(banda vet[] ,int qtd_bandas){
+    string pesquisa_excluir;
+    cout<<"Digite o nome da banda que você deseja exluir";
+    cin>>pesquisa_excluir;
+    int i = 0;
+    bool encontrada = false;
+    while(encontrada != true or i< qtd_bandas){
+        if(vet[i].nome == pesquisa_excluir){
+           encontrada = true;
+           vet[i].excluido = true;
+           cout<<"Banda excluida com sucesso";
+        }
+        i++;
+    }
+    if(encontrada == false){
+        cout<<"Banda nao foi encontrada";
+    }
+}
 
 
 int main(){
@@ -232,11 +317,13 @@ int main(){
 	banda *bandas = new banda[tam];
     qtd_bandas = lerBandasDoCSV("westview.csv", bandas);
     do{
-        menu();
+        main_menu();
         cin>>op;
+        string escolhido; //será utilizado na opção 3 
+        int opAux; //será utilizado na opção 3 e 4
         switch(op){
             case 0:
-                cout<<"Tchau!\n";
+                cout<<"Tchau!/n";
                 break;
             case 1:
                 listar(bandas, qtd_bandas);
@@ -245,10 +332,43 @@ int main(){
                 inserir(bandas, qtd_bandas);
                 break;
             case 3:
-                //pesquisar
+                escolhido = menu_pesquisa(opAux);
+                if(!escolhido.empty()){
+                    if(opAux == 1){ //quer pesquisar por nome
+                        string nomePesquisa = escolhido;
+                        buscarPorNome(bandas, nomePesquisa, qtd_bandas);
+                    }else if(opAux == 2){ //quer pesquisar por ID
+                        int ID_pesquisa = stoi(escolhido);
+                        buscarPorID(bandas, ID_pesquisa, qtd_bandas);
+                    }
+                }
+                break;
+            case 4:
+                opAux = menu_ordena();
+                switch(opAux){
+                    case 0:
+                    break;
+                    case 1:
+                        ordenarPorAlbuns(bandas, qtd_bandas);
+                    break;
+                    case 2:
+                        ordenarPorId(bandas, qtd_bandas);
+                    break;
+                    case 3:
+                        ordenarPorNome(bandas, qtd_bandas);
+                    break;
+                    default:
+                        cout<<"Opção inválida! >:(\n";
+
+                }
+                break;
+            case 5:
+                 excluir(bandas, qtd_bandas);
+                 break;
             default:
-                cout<<"Opção inválida\n";
+                cout<<"Opção inválida!\n";
         }
     }while(op != 0);
+    delete [] bandas;
     return 0;
 }
