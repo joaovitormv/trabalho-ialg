@@ -1,16 +1,53 @@
-#nome,ativo,num_albuns,num_albuns_vendidos,num_integrantes,genero
-Metallica,TRUE,11,125,4,heavy-metal
-The Beatles,FALSE,13,236,4,rock
-Led Zeppelin,FALSE,9,300,4,heavy-metal
-Queen,TRUE,15,300,3,rock
-AC/DC,TRUE,15,123,3,hard-rock
-Pink Floyd,FALSE,15,250,4,progressive-rock
-Nirvana,FALSE,3,75,3,grunge
-Guns N' Roses,TRUE,6,100,5,hard-rock
-Iron Maiden,TRUE,17,200,6,heavy-metal
-The Rolling Stones,TRUE,30,240,4,rock
-U2,TRUE,14,175,4,rock
-Deep Purple,TRUE,22,100,5,hard-rock
-Black Sabbath,FALSE,19,150,4,heavy-metal
-Aerosmith,TRUE,15,150,5,hard-rock
-Red Hot Chili Peppers,TRUE,13,120,4,alternative-rock 
+#ID,nome,ativo,num_albuns,num_albuns_vendidos,num_integrantes,genero
+1,Metallica,TRUE,11,125,4,heavy-metal
+2,The Beatles,FALSE,13,236,4,rock
+3,Led Zeppelin,FALSE,9,300,4,heavy-metal
+4,Queen,TRUE,15,300,3,rock
+5,AC/DC,TRUE,15,123,3,hard-rock
+6,Pink Floyd,FALSE,15,250,4,progressive-rock
+7,Nirvana,FALSE,3,75,3,grunge
+8,Guns N' Roses,TRUE,6,100,5,hard-rock
+9,Iron Maiden,TRUE,17,200,6,heavy-metal
+10,The Rolling Stones,TRUE,30,240,4,rock
+11,U2,TRUE,14,175,4,rock
+12,Deep Purple,TRUE,22,100,5,hard-rock
+13,Black Sabbath,FALSE,19,150,4,heavy-metal
+14,Aerosmith,TRUE,15,150,5,hard-rock
+15,Red Hot Chili Peppers,TRUE,13,120,4,alternative-rock
+16,Radiohead,FALSE,9,100,5,alternative-rock
+17,The Who,FALSE,12,100,4,rock
+18,The Doors,FALSE,6,80,4,psychedelic-rock
+19,Pearl Jam,TRUE,11,85,5,grunge
+20,Green Day,TRUE,13,95,3,punk-rock
+21,Foo Fighters,TRUE,10,90,6,alternative-rock
+22,Linkin Park,FALSE,7,100,6,nu-metal
+23,Coldplay,TRUE,9,120,4,pop-rock
+24,Muse,TRUE,8,70,3,alternative-rock
+25,Blink-182,TRUE,8,65,3,pop-punk
+26,Bon Jovi,TRUE,15,130,5,rock
+27,System of a Down,FALSE,5,80,4,alternative-metal
+28,Paramore,TRUE,6,55,4,pop-rock
+29,Evanescence,FALSE,4,45,5,gothic-rock
+30,Imagine Dragons,TRUE,5,75,4,pop-rock
+31,Arctic Monkeys,TRUE,7,60,4,indie-rock
+32,The Killers,TRUE,6,50,4,alternative-rock
+33,The Strokes,TRUE,6,45,5,garage-rock
+34,Fall Out Boy,TRUE,7,50,4,pop-punk
+35,Panic! At The Disco,FALSE,6,40,5,alternative-rock
+36,The Smashing Pumpkins,FALSE,11,70,5,alternative-rock
+37,Yes,FALSE,21,60,5,progressive-rock
+38,Genesis,FALSE,15,100,5,progressive-rock
+39,Rush,FALSE,19,100,3,progressive-rock
+40,Kiss,FALSE,20,100,4,hard-rock
+41,Journey,FALSE,14,75,5,arena-rock
+42,The Cure,TRUE,13,55,4,gothic-rock
+43,R.E.M.,FALSE,15,85,4,alternative-rock
+44,The Cranberries,FALSE,8,45,4,alternative-rock
+45,Blur,FALSE,8,40,4,britpop
+46,Oasis,FALSE,7,60,5,britpop
+47,Kings of Leon,TRUE,8,45,4,alternative-rock
+48,Florence and the Machine,TRUE,4,30,5,baroque-pop
+49,Tame Impala,TRUE,4,35,1,psychedelic-rock
+50,The 1975,TRUE,5,25,4,indie-pop
+
+
