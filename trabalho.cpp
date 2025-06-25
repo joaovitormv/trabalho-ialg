@@ -19,31 +19,48 @@ struct banda
     bool excluido;
 };
 
-banda *aumentarVetor(banda vetor[], int &qtd)
+void aumentarVetor(banda* &vetor, int &qtd)
 {
     int tamAntigo = qtd;
     qtd = qtd + 10;
     banda *temp = new banda[qtd];
-    copy(vetor, &vetor[tamAntigo-1], temp);
+    for(int i =0; i<tamAntigo; i ++){
+        temp[i] = vetor[i]; 
+    }
     delete[] vetor;
-    return temp;
+    vetor = temp;
 };
 
-void main_menu()
-{
-    cout << "\n1 - Listar\n";
-    cout << "2 - Inserir\n";
-    cout << "3 - Pesquisar\n";
-    cout << "4 - Ordenar\n";
-    cout << "5 - Excluir\n";
-    cout << "6 - Importar dados de um arquivo .csv\n"; // precisa??
-    cout << "7 - Exportar dados para um arquivo .csv\n";
-    cout << "8 - Salvar alterações no arquivo binário\n";
-    cout << "0 - Encerrar\n";
-};
+void displayHeader(const string& title) { //para fazer o menu bonitinho
+    cout << "\n\033[1;36m" << string(50, '=') << "\033[0m\n";
+    cout << "\033[1;36m" << setw((50 + title.length()) / 2) << title << "\033[0m\n";
+    cout << "\033[1;36m" << string(50, '=') << "\033[0m\n";
+}
 
-string menu_pesquisa(int &op)
-{ //
+void displayMenuItem(int option, const string& text) { //para fazer o menu bonitinho
+    cout << "\033[1;33m" << setw(2) << option << "\033[0m" << " - " << text << "\n";
+}
+
+void main_menu() {
+    
+    displayHeader("BEM VINDO AO PROGRAMA 'ROLLING STONE BRASIL'");
+    
+    displayMenuItem(1, "Listar todos os registros");
+    displayMenuItem(2, "Inserir novo registro");
+    displayMenuItem(3, "Pesquisar registro");
+    displayMenuItem(4, "Ordenar registros");
+    displayMenuItem(5, "Excluir registro");
+    displayMenuItem(6, "Importar dados de arquivo CSV");
+    displayMenuItem(7, "Exportar dados para arquivo CSV");
+    displayMenuItem(8, "Salvar alterações no arquivo binário");
+    displayMenuItem(0, "Encerrar programa");
+    
+    cout << "\n\033[1;36m" << string(50, '=') << "\033[0m\n";
+    cout << "\033[1;32mDigite sua opção: \033[0m";
+}
+
+string menu_pesquisa(int &op) //exibe as opções caso o usuario queira pesquisar
+{ 
     string escolhido;
     do
     {
@@ -75,7 +92,7 @@ string menu_pesquisa(int &op)
     return "Erro inesperado\n";
 }
 
-int menu_ordena()
+int menu_ordena() //exibe as opções caso o usuario queira ordenar
 {
     int op;
 
@@ -89,45 +106,51 @@ int menu_ordena()
     return op;
 }
 
-void inserir(banda vetor[], int &qtd, int &tam)
+void inserir(banda* &vetor, int &qtd, int &tam) //adiciona mais uma banda 
 {
     if (tam == qtd)
     {
-        vetor = aumentarVetor(vetor, tam);
+        aumentarVetor(vetor, tam);
     }
     char nome[50], genero[50];
     int albuns, numMembrosFund;
     int ativa;
     float vendas;
+    int max_id = 0;
+    for (int i = 0; i < qtd; i++) {
+        if (vetor[i].id > max_id) {
+            max_id = vetor[i].id;
+        }
+    }
 
     cout << "Nome da banda?" << endl;
     cin.ignore(); // Ignora o \n deixado pelo cin anterior
     cin.getline(nome, 50);
 
-    cout << "Numero de albuns?" << endl;
+    cout << "Número de albuns?" << endl;
     cin >> albuns;
     while (albuns < 0)
     {
-        cout << "So numeros maiores ou iguais a 0" << endl;
-        cout << "Numero de albuns?" << endl;
+        cout << "Somente números maiores ou iguais a 0" << endl;
+        cout << "Número de álbuns?" << endl;
         cin >> albuns;
     }
 
-    cout << "Quantos albuns vendeu? (em milhões)" << endl;
+    cout << "Quantos álbuns vendeu? (em milhões)" << endl;
     cin >> vendas;
     while (vendas < 0)
     {
-        cout << "So numeros maiores ou iguais a 0" << endl;
-        cout << "Quantos albuns vendeu? (em milhões)" << endl;
+        cout << "Somente números maiores ou iguais a 0" << endl;
+        cout << "Quantos álbuns vendeu? (em milhões)" << endl;
         cin >> vendas;
     }
 
-    cout << "Esta ativa? 0 - Não  1 - Sim" << endl;
+    cout << "Está ativa? Digite 0 para NÃO ou 1 para SIM" << endl;
     cin >> ativa;
     while (ativa != 0 && ativa != 1)
     {
-        cout << "Apenas 1 ou 0" << endl;
-        cout << "Esta ativa? 0 - Não  1 - Sim" << endl;
+        cout << "Apenas 1 ou 0!" << endl;
+        cout << "Está ativa? 0 - Não  1 - Sim" << endl;
         cin >> ativa;
     }
 
@@ -135,15 +158,15 @@ void inserir(banda vetor[], int &qtd, int &tam)
     cin >> numMembrosFund;
     while (numMembrosFund < 0)
     {
-        cout << "So numeros maiores que 0" << endl;
+        cout << "Somente números maiores que 0" << endl;
         cout << "Quantos membros fundadores?" << endl;
         cin >> numMembrosFund;
     }
 
-    cout << "Qual o genero da banda? (Pode conter espaços)" << endl;
+    cout << "Qual o gênero da banda?" << endl;
     cin.ignore(); // Ignora o \n deixado pelo cin anterior
     cin.getline(genero, 50);
-    vetor[qtd].id = qtd;
+    vetor[qtd].id = max_id;
     strcpy(vetor[qtd].nome, nome);
     vetor[qtd].numAlbuns = albuns;
     vetor[qtd].ativa = (ativa == 1);
@@ -155,9 +178,9 @@ void inserir(banda vetor[], int &qtd, int &tam)
     qtd++;
 };
 
-void salvarBinario(banda bandas[], int qtdBandas)
+void salvarBinario(banda* &bandas, int qtdBandas) //salva os dados no arquivo bandas.bin
 {
-    ofstream arquivo("bandas.bin", ios::binary);
+    ofstream arquivo("bandas.bin", ios::binary| ios::trunc);
 
     if (!arquivo.is_open())
     {
@@ -167,69 +190,112 @@ void salvarBinario(banda bandas[], int qtdBandas)
 
     for (int i = 0; i < qtdBandas; i++)
     {
-        arquivo.write((char *)&bandas[i], sizeof(banda));
+        if(bandas[i].excluido == false){
+            arquivo.write((char *)&bandas[i], sizeof(banda));
+        }
     }
 
     arquivo.close();
     cout << "Dados salvos no arquivo binário com sucesso!" << endl;
 }
 
-int lerBandasDoCSV(const char *nomeArquivo, banda bandas[], int &tam)
-{ // modificar para carregar tudo
+int lerBandasDoCSV(const char *nomeArquivo, banda* &bandas, int &tam) //importa os dados do arquivo westview.csv no inicio da execução
+{
     ifstream arquivocsv(nomeArquivo);
     if (!arquivocsv.is_open())
     {
-        cerr << "Erro: Nao foi possivel abrir o arquivo " << nomeArquivo << endl;
-        return 0; // Retorna 0 bandas se o arquivo não pode ser aberto
+        cerr << "Erro: Não foi possivel abrir o arquivo " << nomeArquivo << endl;
+        return 0;
     }
 
-    const int maxBandas = 50;
     int i = 0;
     string linha;
-    getline(arquivocsv, linha);
+    getline(arquivocsv, linha); // Pula o cabeçalho
 
-    while (i < maxBandas && getline(arquivocsv, linha))
+    // Registra a linha atual para mensagens de erro mais claras
+    int numeroLinha = 1; 
+
+    while (getline(arquivocsv, linha))
     {
+        numeroLinha++;
+
         if (i == tam)
         {
-            bandas = aumentarVetor(bandas, tam);
+           aumentarVetor(bandas, tam);
         }
-        // Cria um stringstream com a linha lida
+
         stringstream ss(linha);
         string campo;
 
-        // Lê cada campo separado por vírgula
+        getline(ss, campo, ',');
+        try {
+            if (!campo.empty()) {
+                bandas[i].id = stoi(campo);
+            } else {
+                bandas[i].id = i; 
+            }
+        } catch (const std::invalid_argument& e) {
+            cerr << "AVISO: ID invalido na linha " << numeroLinha << " do CSV." << endl;
+            bandas[i].id = i;
+        }
+
+        
         ss.getline(bandas[i].nome, sizeof(bandas[i].nome), ',');
+        
+        
         getline(ss, campo, ',');
         bandas[i].ativa = (campo == "1");
+
+        
         getline(ss, campo, ',');
-        bandas[i].numAlbuns = stoi(campo);
+        try {
+            bandas[i].numAlbuns = !campo.empty() ? stoi(campo) : 0;
+        } catch (const std::invalid_argument& e) {
+            cerr << "AVISO: Numero de albuns invalido na linha " << numeroLinha << endl;
+            bandas[i].numAlbuns = 0; 
+        }
+        
+        
         getline(ss, campo, ',');
-        bandas[i].numVendas = stof(campo);
+        try {
+            bandas[i].numVendas = !campo.empty() ? stof(campo) : 0.0f;
+        } catch (const std::invalid_argument& e) {
+            cerr << "AVISO: Numero de vendas invalido na linha " << numeroLinha << endl;
+            bandas[i].numVendas = 0.0f; 
+        }
+        
+        
         getline(ss, campo, ',');
-        bandas[i].numMembrosFund = stoi(campo);
-        ss.getline(bandas[i].genero, sizeof(bandas[i].genero), ','); // Último campo pega até o fim da linha
+        try {
+            bandas[i].numMembrosFund = !campo.empty() ? stoi(campo) : 0;
+        } catch (const std::invalid_argument& e) {
+            cerr << "AVISO: Numero de membros invalido na linha " << numeroLinha << endl;
+            bandas[i].numMembrosFund = 0; 
+        }
+
+        
+        ss.getline(bandas[i].genero, sizeof(bandas[i].genero), ',');
+        
         bandas[i].excluido = false;
-        bandas[i].id = i;
         i++;
     }
 
     arquivocsv.close();
-    return i; // retorna a qtd de bandas gravadas
-};
+    return i;
+}
 
-int importarBinario(banda bandas[], int &tam)
-{ // carregamento inicial dos 40 valores
 
-    int qtdImport = 50; // o tanto que eu quero importar
+int importarBinario(banda* &bandas, int &tam)
+{ // importa os dados do arquivo bandas.bin
+
     int qtdBandas = 0;  // o tanto que já foi carregado
-
     ifstream arquivo("bandas.bin", ios::binary);
     if (!arquivo)
     { // se não existe arquivo binário, ele carrega do csv e então salva o binário
 
         qtdBandas = lerBandasDoCSV("westview.csv", bandas, tam);
         salvarBinario(bandas, qtdBandas);
+        cout<<"Arquivo binário criado. Dados importados de 'westview.csv'\n";
     }
     else
     { // se existe, ele importa do binario pro vetor
@@ -241,11 +307,11 @@ int importarBinario(banda bandas[], int &tam)
         }
 
         banda temp;
-        while (qtdBandas < qtdImport && arquivo.read((char *)&temp, sizeof(banda)))
+        while (arquivo.read((char *)&temp, sizeof(banda)))
         {
             if (qtdBandas == tam)
             {
-                bandas = aumentarVetor(bandas, tam);
+                aumentarVetor(bandas, tam);
             }
             bandas[qtdBandas] = temp;
             qtdBandas++;
@@ -257,7 +323,7 @@ int importarBinario(banda bandas[], int &tam)
     return qtdBandas;
 }
 
-void listar(banda vetor[], int qtd_bandas)
+void listar(banda vetor[], int qtd_bandas) //mostra as bandas
 {
     const int nomeWidth = 25;
     const int albunsWidth = 10;
@@ -267,7 +333,7 @@ void listar(banda vetor[], int qtd_bandas)
 
     // Cabeçalho
 
-    cout << "Voce deseja listar: 1 - TUDO  2 - UMA PARTE ? \n";
+    cout << "Voce deseja listar: 1 - TUDO  2 - UMA PARTE \n";
     int op, tam;
     cin >> op;
     while (op != 1 and op != 2)
@@ -378,12 +444,12 @@ void ordenarPorNome(banda vet[], int qtd)
         menor = i;
         for (int j = i + 1; j < qtd; j++)
         {
-            if (vet[menor].nome > vet[j].nome)
+            if (strcmp(vet[j].nome, vet[menor].nome) < 0)
             {
                 menor = j;
             }
         }
-        if (menor != 0)
+        if (menor != i)
         {
             aux = vet[i];
             vet[i] = vet[menor];
@@ -401,14 +467,15 @@ void buscarPorNome(banda vet[], string pesquisa, int qtd_bandas)
     while (pos_inicial <= pos_final)
     {
         meio = (pos_inicial + pos_final) / 2;
-        if (pesquisa == vet[meio].nome)
+        int comparacao = strcmp(pesquisa.c_str(), vet[meio].nome);
+        if (comparacao == 0)
         {
             posicao = meio;
             pos_inicial = pos_final + 1;
         }
         else
         {
-            if (pesquisa > vet[meio].nome)
+            if (comparacao >0)
             {
                 pos_inicial = meio + 1;
             }
@@ -421,7 +488,7 @@ void buscarPorNome(banda vet[], string pesquisa, int qtd_bandas)
     if (posicao != -1)
     {
         cout << "A banda foi encontrada!!" << endl;
-        cout << "Nome: " << vet[posicao].nome << " Numero de Albuns: " << vet[posicao].numAlbuns << "Numero de vendas: " << vet[posicao].numVendas << endl;
+        cout << "Nome: " << vet[posicao].nome << " Numero de Albuns: " << vet[posicao].numAlbuns << " Numero de vendas: " << vet[posicao].numVendas <<" Numero de Vendas: "<<vet[posicao].genero<< endl;
     }
     else
     {
@@ -459,7 +526,7 @@ void buscarPorID(banda vet[], int pesquisa, int qtd_bandas)
     if (posicao != -1)
     {
         cout << "A banda foi encontrada!!" << endl;
-        cout << "Nome: " << vet[posicao].nome << " Numero de Albuns: " << vet[posicao].numAlbuns << "Numero de vendas: " << vet[posicao].numVendas << endl;
+        cout << "Nome: " << vet[posicao].nome << " Numero de Albuns: " << vet[posicao].numAlbuns << " Numero de vendas: " << vet[posicao].numVendas << endl;
     }
     else
     {
@@ -467,16 +534,17 @@ void buscarPorID(banda vet[], int pesquisa, int qtd_bandas)
     }
 }
 
-void excluir(banda vet[], int qtd_bandas)
+void excluir(banda* &vet, int qtd_bandas) //exclui logicamente. na hora de salvar as alterações, a exclusão é física
 {
-    string pesquisa_excluir;
+    char pesquisa_excluir[50];
     cout << "Digite o nome da banda que você deseja exluir: ";
-    cin >> pesquisa_excluir;
+    cin.ignore();
+    cin.getline(pesquisa_excluir, 50);
     int i = 0;
     bool encontrada = false;
-    while (encontrada != true or i < qtd_bandas)
+    while (encontrada != true and i < qtd_bandas)
     {
-        if (vet[i].nome == pesquisa_excluir)
+        if (strcmp(vet[i].nome, pesquisa_excluir) == 0)
         {
             encontrada = true;
             vet[i].excluido = true;
@@ -490,29 +558,124 @@ void excluir(banda vet[], int qtd_bandas)
     }
 }
 
-void exportarcsv(banda bandas[], int qtd){
+void exportarcsv(banda bandas[], int qtd) //exporta os dados para um arquivo csv informado 
+{
     string nomeArquivo;
-    cout << "Informe o nome do arquivo que deseja criar: ";
+    cout << "Informe o nome do arquivo para o qual deseja exportar: ";
     cin >> nomeArquivo;
 
     ofstream csv(nomeArquivo);
 
-    csv << "#nome,ativo,num_albuns,num_albuns_vendidos,num_integrantes,genero\n";
+    csv << "#id,nome,ativo,num_albuns,num_albuns_vendidos,num_integrantes,genero\n";
 
     for (int i = 0; i < qtd; i++)
     {
         csv << bandas[i].id << ","
+            <<bandas[i].nome<<","
             << bandas[i].ativa << ","
-            <<bandas[i].numAlbuns << ","
-            <<bandas[i].numVendas << ","
-            <<bandas[i].numMembrosFund << ","
-            <<bandas[i].genero << ","
-             "\n";
+            << bandas[i].numAlbuns << ","
+            << bandas[i].numVendas << ","
+            << bandas[i].numMembrosFund << ","
+            << bandas[i].genero << "\n";
     }
 
     csv.close();
     cout << "Dados exportados para " << nomeArquivo << " com sucesso!\n";
-} 
+}
+
+int importarcsv(banda* &bandas, int &tam) { //importa os dados de um arquivo csv informado pleo usuário
+    string nomeArquivo;
+    cout << "Informe o nome do arquivo .csv do qual deseja importar os dados: ";
+    cin >> nomeArquivo;
+
+    ifstream arq(nomeArquivo);
+    if (!arq.is_open()) {
+        cerr << "Erro: Nao foi possivel abrir o arquivo " << nomeArquivo << endl;
+        return 0;
+    }
+
+    int i = 0;
+    string linha;
+    getline(arq, linha); // Pula o cabeçalho
+
+    // Registra a linha atual para mensagens de erro mais claras
+    int numeroLinha = 1; 
+
+    while (getline(arq, linha)) {
+        numeroLinha++;
+
+        // Ignora linhas vazias
+        if (linha.empty()) {
+            continue;
+        }
+
+        if (i == tam) {
+            aumentarVetor(bandas, tam);
+        }
+
+        stringstream ss(linha);
+        string campo;
+
+        // ID
+        getline(ss, campo, ',');
+        try {
+            bandas[i].id = !campo.empty() ? stoi(campo) : i;
+        } catch (const invalid_argument& e) {
+            cerr << "AVISO: ID invalido na linha " << numeroLinha << ". Usando valor padrao: " << i << endl;
+            bandas[i].id = i;
+        }
+
+        // Nome
+        getline(ss, campo, ',');
+        strncpy(bandas[i].nome, campo.c_str(), sizeof(bandas[i].nome) - 1);
+        bandas[i].nome[sizeof(bandas[i].nome) - 1] = '\0';
+
+        // Ativa
+        getline(ss, campo, ',');
+        bandas[i].ativa = (campo == "1");
+
+        // Número de Álbuns
+        getline(ss, campo, ',');
+        try {
+            bandas[i].numAlbuns = !campo.empty() ? stoi(campo) : 0;
+        } catch (const invalid_argument& e) {
+            cerr << "AVISO: Numero de albuns invalido na linha " << numeroLinha << ". Usando 0." << endl;
+            bandas[i].numAlbuns = 0;
+        }
+
+        // Vendas
+        getline(ss, campo, ',');
+        try {
+            bandas[i].numVendas = !campo.empty() ? stof(campo) : 0.0f;
+        } catch (const invalid_argument& e) {
+            cerr << "AVISO: Numero de vendas invalido na linha " << numeroLinha << ". Usando 0.0." << endl;
+            bandas[i].numVendas = 0.0f;
+        }
+
+        // Membros Fundadores
+        getline(ss, campo, ',');
+        try {
+            bandas[i].numMembrosFund = !campo.empty() ? stoi(campo) : 0;
+        } catch (const invalid_argument& e) {
+            cerr << "AVISO: Numero de membros invalido na linha " << numeroLinha << ". Usando 0." << endl;
+            bandas[i].numMembrosFund = 0;
+        }
+
+        // Gênero (último campo pode conter vírgulas se for entre aspas)
+        getline(ss, campo);
+        strncpy(bandas[i].genero, campo.c_str(), sizeof(bandas[i].genero) - 1);
+        bandas[i].genero[sizeof(bandas[i].genero) - 1] = '\0';
+
+        bandas[i].excluido = false;
+        i++;
+    }
+
+    arq.close();
+    cout << "Dados carregados de " << nomeArquivo << " com sucesso! Total: " << i << " bandas." << endl;
+    return i;
+}
+
+
 
 int main()
 {
@@ -527,9 +690,16 @@ int main()
         cin >> op;
         string escolhido; // será utilizado na opção 3
         int opAux;        // será utilizado na opção 3 e 4
+        char opAux6; // será utilizado na opção 6
+        char opAux0; // sera utilizado na opção 0
         switch (op)
         {
         case 0:
+            cout << "Deseja salvar as alterações antes de sair? (S/N): ";
+            cin >> opAux0;
+            if (opAux0 == 'S' || opAux0 == 's') {
+                salvarBinario(bandas, qtd_bandas);
+            }
             cout << "\nTchau!\n";
             break;
         case 1:
@@ -577,12 +747,27 @@ int main()
             excluir(bandas, qtd_bandas);
             break;
         case 6:
-        break;
+        do{
+            cout<<"Atenção! Dados não salvos serão perdidos.\n";
+            cout<<"Deseja continuar? Digite S / N\n";
+            cin>>opAux6;
+            if(opAux6 == 's' or opAux6 == 'S'){
+                delete [] bandas;
+                bandas = new banda[50];
+                qtd_bandas = importarcsv(bandas, tam);
+            }else if(opAux6 != 'N' and opAux6 != 'n'){
+                cout<<"Opção inválida! >:[";
+            }else{
+                opAux6 = 's';
+            }
+        }while(opAux6 != 'S' and opAux6 != 's'); 
+            break;
         case 7:
             exportarcsv(bandas, qtd_bandas);
-        break;
+            break;
         case 8:
-        break;
+            salvarBinario(bandas,qtd_bandas);
+            break;
         default:
             cout << "Opção inválida!\n";
         }

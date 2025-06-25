@@ -39,15 +39,13 @@
 38,Genesis,FALSE,15,100,5,progressive-rock
 39,Rush,FALSE,19,100,3,progressive-rock
 40,Kiss,FALSE,20,100,4,hard-rock
-41,Journey,FALSE,14,75,5,arena-rock
-42,The Cure,TRUE,13,55,4,gothic-rock
-43,R.E.M.,FALSE,15,85,4,alternative-rock
-44,The Cranberries,FALSE,8,45,4,alternative-rock
-45,Blur,FALSE,8,40,4,britpop
-46,Oasis,FALSE,7,60,5,britpop
-47,Kings of Leon,TRUE,8,45,4,alternative-rock
-48,Florence and the Machine,TRUE,4,30,5,baroque-pop
-49,Tame Impala,TRUE,4,35,1,psychedelic-rock
-50,The 1975,TRUE,5,25,4,indie-pop
-
-
+41,Megadeth,TRUE,16,90,4,thrash-metal  
+42,Slayer,FALSE,12,70,4,thrash-metal  
+43,Judas Priest,TRUE,18,110,5,heavy-metal  
+44,Slipknot,TRUE,6,80,9,nu-metal  
+45,Avenged Sevenfold,TRUE,8,60,5,heavy-metal  
+46,Deftones,TRUE,9,50,5,alternative-metal  
+47,Korn,TRUE,13,75,5,nu-metal  
+48,Alice in Chains,TRUE,6,60,4,grunge  
+49,Soundgarden,FALSE,6,55,4,grunge  
+50,Desajustados,FALSE,0,0,6,pop-rock
