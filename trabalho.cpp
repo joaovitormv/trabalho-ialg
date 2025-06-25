@@ -97,7 +97,7 @@ int menu_ordena() //exibe as opções caso o usuario queira ordenar
     int op;
 
     cout << "\nVocê deseja ordenar por: \n";
-    cout << "1 - Álbuns\n";
+    cout << "1 - Vendas\n";
     cout << "2 - ID\n";
     cout << "3 - Nome\n";
     cout << "0 - Cancelar\n";
